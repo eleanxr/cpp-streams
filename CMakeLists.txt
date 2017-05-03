@@ -12,12 +12,14 @@ include_directories(
 set( ${PROJECT_NAME}_HEADERS
   DataSink.h
   DataSource.h
+  MapFunction.h
   PrintSink.h
   TextFileSource.h
 )
 set( ${PROJECT_NAME}_SOURCES
   DataSink.cpp
   DataSource.cpp
+  MapFunction.cpp
   PrintSink.cpp
   TextFileSource.cpp
 )
@@ -31,5 +33,5 @@ target_link_libraries( ${PROJECT_NAME}
   ${Boost_LIBRARIES}
 )
 
-add_executable( serialExecution main.cpp )
+add_executable( serialExecution serialExecution.cpp )
 target_link_libraries( serialExecution ${PROJECT_NAME} )
